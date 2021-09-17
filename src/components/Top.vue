@@ -27,7 +27,7 @@
     <body>
       <h1 class="title">ALiHaPi</h1>
       <p>今日のちょっと楽しかったことを共有するサイト</p>
-      <p>aaaaaaa</p>
+      <p>aaaaaaaっっっっっj</p>
       <h2>機能一覧</h2>
       <div class="Items">
         <div class="Item"></div>
