@@ -62,13 +62,11 @@
       </div>
       <div class="registerpass">
         <router-link :to="{ name: 'registerPass' }"
-          >パスワードを未登録の方はこちら</router-link
+          >パスワードを未登録の方はこちら!</router-link
         >
       </div>
     </div>
-    <div class="rightBar">
-
-    </div>
+    <div class="rightBar"></div>
   </div>
 </template>
 
