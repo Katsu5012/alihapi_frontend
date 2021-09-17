@@ -1,0 +1,26 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: borales/actions-npm@v7.22.0
+        with:
+          cmd: install # will run `npm install` command
+      - uses: borales/actions-npm@v7.22.0
+        with:
+          cmd: generate # will run `npm run build` command
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: 'alihapifront'
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'ap-northeast-1'   # optional: defaults to us-east-1
+          SOURCE_DIR: 'dist/'      # optional: defaults to entire repository
