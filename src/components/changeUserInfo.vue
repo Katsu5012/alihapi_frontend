@@ -53,6 +53,7 @@
     </div>
     <div class="rightBar">
       <h2>アイコン、背景画像を設定する</h2>
+      <p>アイコンを設定している場合先にアイコンの削除を実施してください</p>
       <input
         @change="fileSelect"
         type="file"
