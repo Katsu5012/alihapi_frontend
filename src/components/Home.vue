@@ -63,7 +63,9 @@
                   type="text"
                   placeholder="投稿しましょう"
                 />
-                <button class="commentbtn" @click.prevent="newComment">投稿する</button>
+                <button class="commentbtn" @click.prevent="newComment">
+                  投稿する
+                </button>
               </div>
             </form>
           </div>
@@ -436,11 +438,12 @@ export default {
           },
         }
       );
-  this.$cookies.remove("access_token")
-localstrage.removeItem('vuex')
-
-      this.$router.push("/");
-    },
+      if(response.data.message ==="success"){
+        this.$cookies.remove("access_token")
+      localstrage.removeItem('vuex')
+            this.$router.push("/");
+          }
+      },
 
     //新規投稿
     async newComment() {
