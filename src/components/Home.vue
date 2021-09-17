@@ -425,25 +425,28 @@ export default {
     },
 
     async logOut() {
-      axios.defaults.headers.common["Authorization"] =
-        "Bearer " + this.$cookies.get("access_token");
-      const response=await axios.post(
-        "logout",
-        {
-          withCredentials: true,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
+      try {
+        axios.defaults.headers.common["Authorization"] =
+          "Bearer " + this.$cookies.get("access_token");
+        await axios.post(
+          "logout",
+          {
+            withCredentials: true,
           },
-        }
-      );
-      if(response.data.message ==="success"){
-        this.$cookies.remove("access_token")
-      localstrage.removeItem('vuex')
-            this.$router.push("/");
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
-      },
+        );
+
+        this.$cookies.remove("access_token");
+        localstrage.removeItem("vuex");
+        this.$router.push("/");
+      } catch (e) {
+        console.log(e);
+      }
+    },
 
     //新規投稿
     async newComment() {
@@ -467,7 +470,7 @@ export default {
         );
         console.log(response);
         if (response.status === 201) {
-window.location.reload();
+          window.location.reload();
         }
       } catch (e) {
         console.log(e);
