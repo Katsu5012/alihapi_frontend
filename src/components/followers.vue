@@ -2,6 +2,8 @@
   <div class="containts">
     <div class="sideBar">
       <div class="sideBarOption">
+         <p>フォロワーー一覧</p>
+            <hr>
         <router-link :to="{ name: 'home' }" class="link"
           ><v-icon name="home" scale="1.5" class="icon" />ホーム</router-link
         >

@@ -26,6 +26,8 @@
             >
           </div>
           <div class="sideBarOption">
+            <p>フォロー一覧</p>
+            <hr>
             <router-link
               :to="{ name: 'top' }"
               class="link"
