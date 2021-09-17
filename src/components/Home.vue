@@ -427,7 +427,7 @@ export default {
     async logOut() {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + this.$cookies.get("access_token");
-      await axios.post(
+      const response=await axios.post(
         "logout",
         {
           withCredentials: true,
