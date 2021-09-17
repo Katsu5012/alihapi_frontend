@@ -30,8 +30,6 @@
       <div class="sideBarOption">
         <button class="sideComment">投稿できません</button>
       </div>
-
-
     </div>
 
     <div class="mainContaints">
@@ -44,38 +42,33 @@
       <p class="posttime">{{ postTime }}</p>
       <hr />
       <div class="user_buttom">
-            <div class="reply">
-        <router-link :to="{name:'ReturnPost', params:{comment_id:id}}">
-
+        <div class="reply">
+          <router-link :to="{ name: 'ReturnPost', params: { comment_id: id } }">
             <v-icon name="reply" class="reply_icon"></v-icon>
-        </router-link>
-          </div>
+          </router-link>
+        </div>
 
-          <div class="heart">
-            <v-icon
-              name="heart"
-              class="heart-icon_notfavorite"
-              @click="sendFavorites()"
-              v-if="!is_likes"
-            ></v-icon>
+        <div class="heart">
+          <v-icon
+            name="heart"
+            class="heart-icon_notfavorite"
+            @click="sendFavorites()"
+            v-if="!is_likes"
+          ></v-icon>
 
-            <v-icon
-              name="heart"
-              class="heart-icon_favorite"
-              @click="deleteFavorites()"
-              v-else-if="is_likes"
-            ></v-icon>
-            <span>
-              {{ likes_count }}
-            </span>
-
+          <v-icon
+            name="heart"
+            class="heart-icon_favorite"
+            @click="deleteFavorites()"
+            v-else-if="is_likes"
+          ></v-icon>
+          <span>
+            {{ likes_count }}
+          </span>
         </div>
         <div class="comment">
-       
-            <v-icon
-              name="comment-alt"
-              class="comment-icon"
-            ></v-icon> <span>{{ reply_count }}</span>
+          <v-icon name="comment-alt" class="comment-icon"></v-icon>
+          <span>{{ reply_count }}</span>
         </div>
       </div>
       <hr />
@@ -113,7 +106,7 @@ export default {
       message: null,
       is_likes: null,
       likes_count: 0,
-      reply_count:null
+      reply_count: null,
     };
   },
   methods: {
@@ -131,8 +124,8 @@ export default {
           },
         }
       );
-this.$cookies.remove("access_token")
-localstrage.removeItem('vuex')
+      this.$cookies.remove("access_token");
+      localstrage.removeItem("vuex");
 
       this.$router.push("/");
     },
@@ -208,8 +201,8 @@ localstrage.removeItem('vuex')
       this.user_image = response.data.user.user_image;
       this.is_likes = response.data.is_likes;
       this.likes_count = response.data.likes_count;
-      this.reply_count=response.data.reply_count;
-      
+      this.reply_count = response.data.reply_count;
+
       let time = new Date(response.data.created_at);
       this.postTime =
         time.getFullYear() +
@@ -316,26 +309,24 @@ localstrage.removeItem('vuex')
 }
 .heart-icon_notfavorite {
   color: pink;
-
 }
 .heart-icon_favorite {
   color: red;
-
 }
 .heart {
   flex: 1;
 }
-.reply{
-  flex:1
+.reply {
+  flex: 1;
 }
-.reply_icon{
-  color:pink
+.reply_icon {
+  color: pink;
 }
 .comment {
   flex: 1;
-  color:pink
+  color: pink;
 }
-.user_buttom{
-  display:flex
+.user_buttom {
+  display: flex;
 }
 </style>

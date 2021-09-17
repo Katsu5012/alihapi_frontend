@@ -198,11 +198,12 @@ export default {
             "Content-Type": "application/json",
           },
         }
-      );
+      );if(response.data.message === "success"){
 
-   this.$cookies.remove("access_token")
-localstrage.removeItem('vuex')
-      this.$router.push("/");
+        this.$cookies.remove("access_token");
+        localstrage.removeItem("vuex");
+        this.$router.push("/");
+      }
     },
     async submit() {
       axios.defaults.headers.common["Authorization"] =
