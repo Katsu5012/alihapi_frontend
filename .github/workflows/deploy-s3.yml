@@ -11,10 +11,10 @@ jobs:
    steps:
    - uses: actions/checkout@master
      with:
-      cmd: install #will run `npm run install` command
+      cmd: npm run install #will run `npm run install` command
    - uses: actions/checkout@master
      with:
-      cmd: build # will run `npm run build` command
+      cmd: npm run build # will run `npm run build` command
    - uses: jakejarvis/s3-sync-action@master
      with:
        args: --acl public-read --follow-symlinks --delete
