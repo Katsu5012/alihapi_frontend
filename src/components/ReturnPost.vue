@@ -207,7 +207,7 @@ export default {
       );
 
 this.$cookies.remove("access_token")
-localstrage.remove('vuex')
+localstrage.removeItem('vuex')
       this.$router.push("/");
     },
   },

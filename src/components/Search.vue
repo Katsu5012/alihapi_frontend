@@ -103,9 +103,8 @@ export default {
           },
         }
       );
-
 this.$cookies.remove("access_token")
-this.$cookies.remove("vuex")
+localstrage.removeItem('vuex')
       this.$router.push("/");
     },
   },
