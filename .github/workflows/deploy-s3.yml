@@ -12,10 +12,10 @@ jobs:
    - name: Checkout
    - uses: actions/checkout@master
      with:
-      cmd: install
+      cmd: install #will run `npm run install` command
    - uses: actions/checkout@master
      with:
-      cmd: build
+      cmd: build # will run `npm run build` command
    - uses: jakejarvis/s3-sync-action@master
      with:
        args: --acl public-read --follow-symlinks --delete
