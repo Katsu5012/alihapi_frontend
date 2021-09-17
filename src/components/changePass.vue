@@ -67,7 +67,7 @@
       </div>
     </div>
     <div class="rightBar">
-      <p>右</p>
+
     </div>
   </div>
 </template>
