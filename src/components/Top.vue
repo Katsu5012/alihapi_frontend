@@ -27,7 +27,6 @@
     <body>
       <h1 class="title">ALiHaPi</h1>
       <p>今日のちょっと楽しかったことを共有するサイト</p>
-<p>aa</p>
       <h2>機能一覧</h2>
       <div class="Items">
         <div class="Item"></div>
@@ -45,14 +44,13 @@
         </div>
         <div class="Item"></div>
       </div>
-      
     </body>
   </div>
 </template>
 
 <style scoped>
 header {
-  padding: 30px  10px;
+  padding: 30px 10px;
   top: 0;
   width: 100%;
   background-color: #fff;
@@ -61,9 +59,9 @@ header {
 
   background-color: #50b7f5;
 }
-body{
+body {
   text-align: center;
-margin:40px 0
+  margin: 40px 0;
 }
 ul {
   list-style: none;
@@ -71,17 +69,16 @@ ul {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right:20px
-
+  margin-right: 20px;
 }
 li {
   margin: 0 0 0 15px;
   font-size: 14px;
   display: inline;
   border-left: #ddd 1px solid;
-  color: white
+  color: white;
 }
-header a{
+header a {
   text-decoration: none;
 }
 
@@ -96,7 +93,7 @@ header a{
   align-items: center;
   cursor: pointer;
   padding: 10px;
-  color:white
+  color: white;
 }
 
 .headerItem:active {
@@ -106,7 +103,7 @@ header a{
 
 .icon {
   padding-right: 20px;
-  color:white
+  color: white;
 }
 .message {
   text-align: center;
@@ -123,7 +120,7 @@ header a{
 .title {
   color: #50b7f5;
   font-size: 60px;
-  margin:40px 0 40px 0
+  margin: 40px 0 40px 0;
 }
 </style>
 
