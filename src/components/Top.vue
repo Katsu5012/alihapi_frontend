@@ -32,7 +32,7 @@
       <div class="Items">
         <div class="Item"></div>
         <div class="Item">
-          <p>ユーザーの新規登録</p>
+          <p>ユーザー新規登録</p>
           <p>アカウント削除</p>
           <p>アイコンを画像で設定</p>
           <p>ログイン、ログアウト</p>
